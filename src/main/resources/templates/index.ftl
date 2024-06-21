@@ -29,7 +29,6 @@
     <span class="title">🔗</span>
 
     <a href="https://github.com/helltar">github</a>
-    <a href="https://twitch.tv/helltar_live">twitch</a>
     <a href="https://www.youtube.com/@Helltar">youtube</a>
     <a href="https://play.google.com/store/apps/dev?id=6279216035258388805">googleplay</a>
 
