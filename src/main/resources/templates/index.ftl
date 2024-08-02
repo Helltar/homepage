@@ -44,9 +44,8 @@
 
     <span class="title">💬 contacts</span>
 
-    <a href="https://t.me/helltar">telegram</a>
-    <a href="https://discordapp.com/users/99958855823269888">discord</a>
-    <a href="mailto:iam@helltar.com">iam@helltar.com</a>
+    iam@helltar.com
+    signal: <b>helltar.01</b>
 </div>
 
 </body>
