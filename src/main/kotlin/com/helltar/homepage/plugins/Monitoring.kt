@@ -9,8 +9,9 @@ import io.ktor.server.plugins.callloging.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
-import io.micrometer.prometheus.*
-import org.slf4j.event.*
+import io.micrometer.prometheus.PrometheusConfig
+import io.micrometer.prometheus.PrometheusMeterRegistry
+import org.slf4j.event.Level
 
 fun Application.configureMonitoring() {
 
@@ -23,7 +24,7 @@ fun Application.configureMonitoring() {
             val status = call.response.status()
             val httpMethod = call.request.httpMethod.value
             val userAgent = call.request.headers["User-Agent"]
-            val remoteAddress = call.request.origin.remoteAddress
+            val remoteAddress = call.request.headers["X-Forwarded-For"] ?: call.request.origin.remoteAddress
             val path = call.request.path()
             val time = call.processingTimeMillis()
             "$status: $httpMethod - $path in $time ms ($remoteAddress - $userAgent)"
