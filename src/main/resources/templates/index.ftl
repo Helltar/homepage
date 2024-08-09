@@ -45,7 +45,7 @@
     <span class="title">💬 contacts</span>
 
     iam@helltar.com
-    signal: <b>helltar.01</b>
+    helltar.01 (signal)
 </div>
 
 </body>
