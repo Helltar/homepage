@@ -17,12 +17,17 @@ fun Route.index() {
                             ProjectData(
                                 "aibot", "artific_intellig_bot",
                                 "AI Telegram Bot, ChatGPT, Dalle2, Whisper, GPT-4 Vision, Stability AI",
-                                "Kotlin, Telegram Bot"
+                                "Kotlin"
+                            ),
+                            ProjectData(
+                                "signai", "signai",
+                                "ChatGPT Bot for the Signal Messenger",
+                                "Kotlin"
                             ),
                             ProjectData(
                                 "twitchviewer_bot", "twitchviewer_bot",
-                                "A bot for obtaining clips or screenshots from Twitch",
-                                "Kotlin, Telegram Bot"
+                                "Telegram Bot for obtaining clips and screenshots from Twitch",
+                                "Kotlin"
                             )
                         ),
 
