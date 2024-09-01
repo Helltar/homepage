@@ -1,46 +1,38 @@
 :root {
-    --main-color: white;
     --background-color: black;
-    --hover-color: gray;
-    --visited-color: rgb(94, 94, 94);
-    --font-size-large: 125%;
     --font-size-small: 75%;
 }
 
 body {
-    color: var(--main-color);
+    color: white;
     background: var(--background-color);
-    font-size: var(--font-size-large);
+    font-size: 125%;
     font-family: Verdana, sans-serif;
     line-height: 200%;
     margin-left: 24%;
     margin-right: 24%;
 }
 
-a:link, .section-title {
-    color: var(--main-color);
+.section-title {
+    margin-bottom: 24px;
+    margin-top: 24px;
+}
+
+a:link {
+    color: white;
+    margin-bottom: 6px;
 }
 
 a:hover {
-    color: var(--hover-color);
+    color: gray;
 }
 
 a:visited {
-    color: var(--visited-color);
+    color: rgb(94, 94, 94);
 }
 
-input {
-    width: 340px;
-    background-color: var(--background-color);
-    color: var(--main-color);
-    border: none;
-    font-family: monospace;
-}
-
-input:focus {
-    outline: none !important;
-    border: 1px solid grey;
-    box-shadow: 0 0 10px var(--main-color);
+p {
+    margin: 0;
 }
 
 .avatar-container {
@@ -59,17 +51,22 @@ input:focus {
     position: absolute;
 }
 
-.main {
-    white-space: pre-line;
-    margin-bottom: 12%;
+.project {
+    margin-bottom: 24px;
 }
 
-.project-description, .programming-language {
+.project-description {
+    font-size: var(--font-size-small);
+    color: #d7d7d7;
+    display: block;
+}
+
+.programming-language {
     font-size: var(--font-size-small);
     color: darkgrey;
 }
 
-.language-color {
+.kotlin-indicator {
     position: relative;
     top: 1px;
     display: inline-block;
@@ -77,4 +74,5 @@ input:focus {
     height: 12px;
     border: 1px solid var(--background-color);
     border-radius: 50%;
+    background-color: #A97BFF;
 }
