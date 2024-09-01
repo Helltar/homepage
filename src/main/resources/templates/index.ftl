@@ -4,12 +4,13 @@
 <#-- @ftlvariable name="routePathStatic" type="java.lang.String" -->
 
 <#assign githubBaseUrl="https://github.com/Helltar">
-<#assign avatarUrl="https://avatars.githubusercontent.com/u/6628997?v=4">
 <#assign youtubeUrl = "https://www.youtube.com/@Helltar">
 <#assign googlePlayUrl = "https://play.google.com/store/apps/dev?id=6279216035258388805">
 
 <#assign email = "iam@helltar.com">
 <#assign signalUsername = "helltar.01">
+
+<#assign avatarUrl="https://avatars.githubusercontent.com/u/6628997?v=4">
 
 <html lang="en">
 
@@ -33,28 +34,29 @@
     <div class="flag">🇺🇦</div>
 </div>
 
-<div class="main">
-    <span class="section-title">🔗</span>
+<div class="section-title">🔗</div>
 
-    <a href="${githubBaseUrl}">github</a>
-    <a href="${youtubeUrl}">youtube</a>
-    <a href="${googlePlayUrl}">googleplay</a>
+<a href="${githubBaseUrl}">github</a><br>
+<a href="${youtubeUrl}">youtube</a><br>
+<a href="${googlePlayUrl}">googleplay</a><br>
 
-    <span class="section-title">🎯 projects</span>
+<div class="section-title">🎯 projects</div>
 
-    <#list projects as project>
+<#list projects as project>
+    <div class="project">
         <a href="${githubBaseUrl}/${project.repo}">${project.name}</a>
         <span class="project-description">${project.about}</span>
-        <span class="language-color" style="background-color: #A97BFF"></span> <span class="programming-language">${project.type}</span>
+        <span class="kotlin-indicator"></span>
+        <span class="programming-language">${project.type}</span>
+    </div>
+</#list>
 
-    </#list>
-    <a href="${githubBaseUrl}?tab=repositories" class="programming-language">see all →</a>
+<a href="${githubBaseUrl}?tab=repositories" style="font-size: medium">see all →</a>
 
-    <span class="section-title">💬 contacts</span>
+<div class="section-title">💬 contacts</div>
 
-    signal: ${signalUsername}
-    email: <a href="mailto:${email}">${email}</a>
-</div>
+<p>signal: ${signalUsername}</p>
+<p>email: ${email}</p>
 
 </body>
 
