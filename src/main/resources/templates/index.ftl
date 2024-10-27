@@ -8,7 +8,7 @@
 <#assign googlePlayUrl = "https://play.google.com/store/apps/dev?id=6279216035258388805">
 
 <#assign email = "iam@helltar.com">
-<#assign signalUsername = "helltar.01">
+<#assign signalLink = "https://signal.me/#eu/y5XuIZWoKC10lplufk6pe6uDF5Mej1t2H6-heyEmqJuoUc4uMI1OUJaKb5nS_drX">
 
 <#assign avatarUrl="https://avatars.githubusercontent.com/u/6628997?v=4">
 
@@ -55,8 +55,8 @@
 
 <div class="section-title">💬 contacts</div>
 
-<p>signal: ${signalUsername}</p>
-<p>email: ${email}</p>
+<p><a href="${signalLink}">signal.me</a></p>
+<p><a href="mailto:${email}">${email}</a></p>
 
 </body>
 
