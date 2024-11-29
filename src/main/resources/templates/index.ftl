@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<#-- @ftlvariable name="projects" type="java.util.Set<com.helltar.plugins.ProjectData>" -->
+<#-- @ftlvariable name="projects" type="java.util.Set<com.helltar.homepage.routes.models.ProjectData>" -->
 <#-- @ftlvariable name="routePathStatic" type="java.lang.String" -->
 
 <#assign githubBaseUrl="https://github.com/Helltar">
@@ -19,6 +19,7 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="Helltar">
+    <meta name="description" content="Personal homepage featuring links to my social media profiles, email contact, and a list of my GitHub projects. Stay connected and explore my work!">
 
     <title>Helltar - homepage</title>
 
