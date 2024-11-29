@@ -1,6 +1,5 @@
-package com.helltar.homepage.plugins
+package com.helltar.homepage
 
-import com.helltar.homepage.PathConstants.DIR_SITE_DATA
 import com.helltar.homepage.routes.index
 import io.ktor.http.*
 import io.ktor.server.application.*
@@ -9,6 +8,9 @@ import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import java.io.File
+
+const val ROUTE_PATH_METRICS = "/metrics"
+const val ROUTE_PATH_STATIC = "/static"
 
 fun Application.configureRouting() {
 
@@ -24,6 +26,6 @@ fun Application.configureRouting() {
 
     routing {
         index()
-        staticFiles("/", File(DIR_SITE_DATA)) { enableAutoHeadResponse() }
+        staticFiles("/", File("data/helltar.com")) { enableAutoHeadResponse() }
     }
 }

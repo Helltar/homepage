@@ -1,8 +1,7 @@
 package com.helltar.homepage.routes
 
-import com.helltar.homepage.routes.Routes.ROUTE_PATH_STATIC
+import com.helltar.homepage.ROUTE_PATH_STATIC
 import com.helltar.homepage.routes.models.ProjectData
-import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
