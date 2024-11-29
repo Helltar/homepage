@@ -1,11 +1,9 @@
-package com.helltar.homepage.plugins
+package com.helltar.homepage
 
-import com.helltar.homepage.routes.Routes.ROUTE_PATH_METRICS
-import com.helltar.homepage.routes.Routes.ROUTE_PATH_STATIC
 import io.ktor.server.application.*
 import io.ktor.server.metrics.micrometer.*
 import io.ktor.server.plugins.*
-import io.ktor.server.plugins.callloging.*
+import io.ktor.server.plugins.calllogging.*
 import io.ktor.server.request.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
