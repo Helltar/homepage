@@ -36,11 +36,11 @@ fun Application.configureMonitoring() {
     }
 
     routing {
-        get(ROUTE_PATH_METRICS) {
+        get("/metrics") {
             call.respond(appMicrometerRegistry.scrape())
         }
     }
 }
 
 private fun shouldLog(path: String) =
-    !path.startsWith(ROUTE_PATH_METRICS) && !path.startsWith(ROUTE_PATH_STATIC)
+    !path.startsWith("/metrics") && !path.startsWith("/static")

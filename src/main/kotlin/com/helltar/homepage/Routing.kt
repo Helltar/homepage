@@ -10,9 +10,6 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 import java.io.File
 
-const val ROUTE_PATH_METRICS = "/metrics"
-const val ROUTE_PATH_STATIC = "/static"
-
 fun Application.configureRouting() {
 
     install(StatusPages) {

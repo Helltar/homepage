@@ -1,6 +1,5 @@
 package com.helltar.homepage.routes
 
-import com.helltar.homepage.ROUTE_PATH_STATIC
 import com.helltar.homepage.routes.models.ProjectData
 import io.ktor.server.freemarker.*
 import io.ktor.server.response.*
@@ -28,9 +27,7 @@ fun Route.index() {
                                 "Telegram Bot for obtaining clips and screenshots from Twitch",
                                 "Kotlin"
                             )
-                        ),
-
-                "routePathStatic" to ROUTE_PATH_STATIC
+                        )
             )
 
         call.respond(FreeMarkerContent("index.ftl", model))
