@@ -23,7 +23,7 @@
 <a href="${youtubeUrl}">youtube</a><br>
 <a href="${googlePlayUrl}">googleplay</a><br>
 
-<div class="section-title">🎯 projects</div>v
+<div class="section-title">🎯 projects</div>
 
 <#list projects as project>
     <div class="project">
