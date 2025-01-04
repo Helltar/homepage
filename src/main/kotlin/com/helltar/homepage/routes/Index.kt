@@ -14,7 +14,7 @@ fun Route.index() {
                         setOf(
                             ProjectData(
                                 "aibot", "artific_intellig_bot",
-                                "AI Telegram Bot, ChatGPT, Dalle2, Whisper, GPT-4 Vision, Stability AI",
+                                "Telegram Bot with OpenAI-powered AI features",
                                 "Kotlin"
                             ),
                             ProjectData(
