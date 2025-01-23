@@ -1,12 +1,10 @@
-<#-- @ftlvariable name="projects" type="java.util.Set<com.helltar.homepage.routes.models.ProjectData>" -->
+<#-- @ftlvariable name="projects" type="java.util.List<com.helltar.homepage.routes.models.GitHub.Repository>" -->
 
 <#assign githubBaseUrl="https://github.com/Helltar">
 <#assign youtubeUrl = "https://www.youtube.com/@Helltar">
 <#assign googlePlayUrl = "https://play.google.com/store/apps/dev?id=6279216035258388805">
-
 <#assign email = "iam@helltar.com">
 <#assign signalLink = "https://signal.me/#eu/y5XuIZWoKC10lplufk6pe6uDF5Mej1t2H6-heyEmqJuoUc4uMI1OUJaKb5nS_drX">
-
 <#assign avatarUrl="https://avatars.githubusercontent.com/u/6628997?v=4">
 
 <#import "layout.ftl" as layout />
@@ -26,12 +24,14 @@
 <div class="section-title">🎯 projects</div>
 
 <#list projects as project>
-    <div class="project">
-        <a href="${githubBaseUrl}/${project.repo}">${project.name}</a>
-        <span class="project-description">${project.about}</span>
-        <span class="kotlin-indicator"></span>
-        <span class="programming-language">${project.type}</span>
-    </div>
+    <#if project??>
+        <div class="project">
+            <a href="${project.url}">${project.name}</a>
+            <span class="project-description">${project.description}</span>
+            <span class="language-indicator"></span>
+            <span class="programming-language">${project.primaryLanguage.name}</span>
+        </div>
+    </#if>
 </#list>
 
 <a href="${githubBaseUrl}?tab=repositories" style="font-size: medium">see all →</a>
