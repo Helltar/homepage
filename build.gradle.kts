@@ -5,7 +5,7 @@ plugins {
 }
 
 group = "com.helltar"
-version = "0.2.5"
+version = "0.3.0"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
@@ -30,6 +30,11 @@ dependencies {
     implementation("io.ktor:ktor-server-netty-jvm")
     implementation("io.ktor:ktor-server-config-yaml-jvm")
 
+    implementation("io.ktor:ktor-client-core")
+    implementation("io.ktor:ktor-client-cio")
+    implementation("io.ktor:ktor-client-content-negotiation")
+
     implementation("io.micrometer:micrometer-registry-prometheus:1.10.5")
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
     implementation("ch.qos.logback:logback-classic:1.5.6")
 }
