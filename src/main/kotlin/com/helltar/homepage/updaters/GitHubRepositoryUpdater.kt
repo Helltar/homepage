@@ -1,10 +1,10 @@
 package com.helltar.homepage.updaters
 
-import com.helltar.homepage.routes.models.GitHub
+import com.helltar.homepage.updaters.models.GitHubRepository
+import com.helltar.homepage.updaters.models.GraphQLResponse
 import io.github.oshai.kotlinlogging.KotlinLogging
 import io.ktor.client.*
 import io.ktor.client.call.*
-import io.ktor.client.engine.cio.*
 import io.ktor.client.plugins.contentnegotiation.*
 import io.ktor.client.request.*
 import io.ktor.http.*
@@ -16,7 +16,7 @@ import kotlin.time.Duration.Companion.hours
 class GitHubRepositoryUpdater(private val delayHours: Long) {
 
     companion object {
-        val githubRepositories = CopyOnWriteArrayList<GitHub.Repository>()
+        val githubRepositories = CopyOnWriteArrayList<GitHubRepository>()
         private val log = KotlinLogging.logger {}
     }
 
@@ -38,7 +38,7 @@ class GitHubRepositoryUpdater(private val delayHours: Long) {
         }
     }
 
-    private suspend fun getPinnedRepos(size: Int = 3, login: String = "Helltar"): List<GitHub.Repository>? {
+    private suspend fun getPinnedRepos(size: Int = 3, login: String = "Helltar"): List<GitHubRepository>? {
         val query =
             """
                 query {
@@ -68,7 +68,7 @@ class GitHubRepositoryUpdater(private val delayHours: Long) {
                     contentType(ContentType.Application.Json)
                     setBody(mapOf("query" to query))
                 }
-                    .body<GitHub.GraphQLResponse>()
+                    .body<GraphQLResponse>()
             }
                 .data.user?.pinnedItems?.nodes
         } catch (e: Exception) {
