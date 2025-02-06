@@ -1,4 +1,4 @@
-package com.helltar.homepage
+package com.helltar.homepage.plugins
 
 import com.helltar.homepage.routes.index
 import io.ktor.http.*
@@ -24,6 +24,9 @@ fun Application.configureRouting() {
 
     routing {
         index()
-        staticFiles("/", File("data")) { enableAutoHeadResponse() }
+
+        staticFiles("/", File("data")) {
+            enableAutoHeadResponse()
+        }
     }
 }

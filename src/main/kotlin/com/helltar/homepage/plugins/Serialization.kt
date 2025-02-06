@@ -1,4 +1,4 @@
-package com.helltar.homepage
+package com.helltar.homepage.plugins
 
 import io.ktor.serialization.kotlinx.json.*
 import io.ktor.server.application.*

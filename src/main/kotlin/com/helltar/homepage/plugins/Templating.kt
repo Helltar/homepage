@@ -1,4 +1,4 @@
-package com.helltar.homepage
+package com.helltar.homepage.plugins
 
 import freemarker.cache.ClassTemplateLoader
 import io.ktor.server.application.*
