@@ -1,11 +1,11 @@
 plugins {
-    kotlin("jvm") version "2.1.10"
-    id("io.ktor.plugin") version "3.0.3"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.10"
+    kotlin("jvm") version "2.1.20"
+    id("io.ktor.plugin") version "3.1.2"
+    id("org.jetbrains.kotlin.plugin.serialization") version "2.1.20"
 }
 
 group = "com.helltar"
-version = "0.3.0"
+version = "0.3.1"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
