@@ -1,4 +1,4 @@
-<#-- @ftlvariable name="projects" type="java.util.List<com.helltar.homepage.updaters.models.GitHubRepository>" -->
+<#-- @ftlvariable name="projects" type="java.util.List<com.helltar.homepage.updaters.GitHubRepository>" -->
 
 <#assign githubBaseUrl="https://github.com/Helltar">
 <#assign youtubeUrl = "https://www.youtube.com/@Helltar">

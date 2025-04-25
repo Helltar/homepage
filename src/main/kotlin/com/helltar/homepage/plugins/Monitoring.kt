@@ -1,6 +1,9 @@
 package com.helltar.homepage.plugins
 
+import com.helltar.homepage.routes.Endpoints.PATH_METRICS
+import com.helltar.homepage.routes.Endpoints.PATH_STATIC
 import io.ktor.server.application.*
+import io.ktor.server.auth.*
 import io.ktor.server.metrics.micrometer.*
 import io.ktor.server.plugins.*
 import io.ktor.server.plugins.calllogging.*
@@ -12,6 +15,12 @@ import io.micrometer.prometheus.PrometheusMeterRegistry
 import org.slf4j.event.Level
 
 fun Application.configureMonitoring() {
+
+    val appMicrometerRegistry = PrometheusMeterRegistry(PrometheusConfig.DEFAULT)
+
+    install(MicrometerMetrics) {
+        registry = appMicrometerRegistry
+    }
 
     install(CallLogging) {
         level = Level.INFO
@@ -29,18 +38,14 @@ fun Application.configureMonitoring() {
         }
     }
 
-    val appMicrometerRegistry = PrometheusMeterRegistry(PrometheusConfig.DEFAULT)
-
-    install(MicrometerMetrics) {
-        registry = appMicrometerRegistry
-    }
-
     routing {
-        get("/metrics") {
-            call.respond(appMicrometerRegistry.scrape())
+        authenticate("auth-bearer") {
+            get(PATH_METRICS) {
+                call.respond(appMicrometerRegistry.scrape())
+            }
         }
     }
 }
 
 private fun shouldLog(path: String) =
-    !path.startsWith("/metrics") && !path.startsWith("/static")
+    !path.startsWith(PATH_METRICS) && !path.startsWith(PATH_STATIC)

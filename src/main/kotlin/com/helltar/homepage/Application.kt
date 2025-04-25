@@ -1,10 +1,8 @@
 package com.helltar.homepage
 
-import com.helltar.homepage.plugins.configureMonitoring
-import com.helltar.homepage.plugins.configureRouting
-import com.helltar.homepage.plugins.configureSerialization
-import com.helltar.homepage.plugins.configureTemplating
-import com.helltar.homepage.updaters.GitHubRepositoryUpdater
+import com.helltar.homepage.Config.config
+import com.helltar.homepage.plugins.*
+import com.helltar.homepage.updaters.PinnedReposFetcher
 import io.ktor.server.application.*
 
 fun main(args: Array<String>) {
@@ -12,13 +10,17 @@ fun main(args: Array<String>) {
 }
 
 fun Application.module() {
+
+    Config.initialize(environment.config)
+
+    configureSecurity()
     configureMonitoring()
     configureSerialization()
     configureTemplating()
     configureRouting()
-    configureUpdaters()
-}
 
-private fun Application.configureUpdaters() {
-    GitHubRepositoryUpdater(20).start()
+    monitor.subscribe(ApplicationStarted) {
+        PinnedReposFetcher(config.githubToken)
+            .start(delayHours = 2)
+    }
 }

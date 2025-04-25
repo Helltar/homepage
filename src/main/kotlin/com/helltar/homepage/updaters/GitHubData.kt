@@ -1,4 +1,4 @@
-package com.helltar.homepage.updaters.models
+package com.helltar.homepage.updaters
 
 import kotlinx.serialization.Serializable
 

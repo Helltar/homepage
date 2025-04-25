@@ -1,9 +1,10 @@
 package com.helltar.homepage.plugins
 
+import com.helltar.homepage.routes.Endpoints.PATH_STATIC
 import com.helltar.homepage.routes.index
 import io.ktor.http.*
 import io.ktor.server.application.*
-import io.ktor.server.freemarker.respondTemplate
+import io.ktor.server.freemarker.*
 import io.ktor.server.http.content.*
 import io.ktor.server.plugins.statuspages.*
 import io.ktor.server.response.*
@@ -25,8 +26,7 @@ fun Application.configureRouting() {
     routing {
         index()
 
-        staticFiles("/", File("data")) {
-            enableAutoHeadResponse()
-        }
+        staticResources(PATH_STATIC, "static")
+        staticFiles("/", File("data")) { enableAutoHeadResponse() }
     }
 }
