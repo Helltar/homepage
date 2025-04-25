@@ -5,5 +5,11 @@ ktor:
   deployment:
     port: 8443
     workerGroupSize: 4
-    callGroupSize: 8
+    callGroupSize: 16
     connectionGroupSize: 8
+
+homepage:
+  apikey: $API_KEY
+
+github:
+  token: $GITHUB_TOKEN
