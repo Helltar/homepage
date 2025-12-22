@@ -1,11 +1,11 @@
 plugins {
-    kotlin("jvm") version "2.2.20"
-    id("io.ktor.plugin") version "3.3.0"
-    id("org.jetbrains.kotlin.plugin.serialization") version "2.2.20"
+    kotlin("jvm") version "2.3.0"
+    kotlin("plugin.serialization") version "2.3.0"
+    id("io.ktor.plugin") version "3.3.3"
 }
 
 group = "com.helltar"
-version = "0.3.8"
+version = "0.5.0"
 
 application {
     mainClass.set("io.ktor.server.netty.EngineMain")
@@ -35,7 +35,7 @@ dependencies {
     implementation("io.ktor:ktor-client-cio")
     implementation("io.ktor:ktor-client-content-negotiation")
 
-    implementation("io.micrometer:micrometer-registry-prometheus:1.10.5")
-    implementation("io.github.oshai:kotlin-logging-jvm:7.0.3")
-    implementation("ch.qos.logback:logback-classic:1.5.18")
+    implementation("io.micrometer:micrometer-registry-prometheus:1.16.1")
+    implementation("io.github.oshai:kotlin-logging-jvm:7.0.7")
+    implementation("ch.qos.logback:logback-classic:1.5.20")
 }
