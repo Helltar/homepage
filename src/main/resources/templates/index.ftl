@@ -20,6 +20,7 @@
 <a href="${githubBaseUrl}">github</a><br>
 <a href="${youtubeUrl}">youtube</a><br>
 <a href="${googlePlayUrl}">googleplay</a><br>
+<a href="/wallpapers">wallpapers</a><br>
 
 <div class="section-title">🎯 projects</div>
 
