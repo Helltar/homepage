@@ -4,6 +4,9 @@ import io.ktor.server.config.*
 
 object Config {
 
+    const val DATA_DIR = "data"
+    const val WALLPAPERS_DIR = "$DATA_DIR/wallpapers"
+
     data class ConfigData(
         val apiKey: String,
         val githubToken: String

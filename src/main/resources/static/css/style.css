@@ -75,3 +75,7 @@ p {
     border-radius: 50%;
     background-color: #A97BFF;
 }
+
+.wallpaper {
+    border: 1px solid #fff;
+}

@@ -1,7 +1,9 @@
 package com.helltar.homepage.plugins
 
+import com.helltar.homepage.Config.DATA_DIR
 import com.helltar.homepage.routes.Endpoints.PATH_STATIC
 import com.helltar.homepage.routes.index
+import com.helltar.homepage.routes.wallpapers
 import io.ktor.http.*
 import io.ktor.server.application.*
 import io.ktor.server.freemarker.*
@@ -18,15 +20,16 @@ fun Application.configureRouting() {
             call.respondText(text = "500: $cause", status = HttpStatusCode.InternalServerError)
         }
 
-        status(HttpStatusCode.NotFound) { call, status ->
+        status(HttpStatusCode.NotFound) { call, _ ->
             call.respondTemplate("404.ftl", null)
         }
     }
 
     routing {
         index()
+        wallpapers()
 
         staticResources(PATH_STATIC, "static")
-        staticFiles("/", File("data")) { enableAutoHeadResponse() }
+        staticFiles("/", File(DATA_DIR)) { enableAutoHeadResponse() }
     }
 }
