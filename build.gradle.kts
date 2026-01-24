@@ -1,7 +1,7 @@
 plugins {
     kotlin("jvm") version "2.3.0"
     kotlin("plugin.serialization") version "2.3.0"
-    id("io.ktor.plugin") version "3.3.3"
+    id("io.ktor.plugin") version "3.4.0"
 }
 
 group = "com.helltar"
@@ -37,5 +37,5 @@ dependencies {
 
     implementation("io.micrometer:micrometer-registry-prometheus:1.16.1")
     implementation("io.github.oshai:kotlin-logging-jvm:7.0.7")
-    implementation("ch.qos.logback:logback-classic:1.5.20")
+    implementation("ch.qos.logback:logback-classic:1.5.25")
 }
