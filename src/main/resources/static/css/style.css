@@ -82,13 +82,25 @@ p {
 }
 
 .project {
-    margin-bottom: 24px;
+    margin-bottom: 0;
+    line-height: inherit;
+    padding-bottom: 4px;
+}
+
+.project:not(:last-child) {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.09);
+}
+
+.project > a {
+    display: inline-block;
 }
 
 .project-description {
     font-size: var(--font-size-small);
     color: #d7d7d7;
     display: block;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
 .programming-language {
