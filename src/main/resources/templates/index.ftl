@@ -1,3 +1,5 @@
+<#ftl output_format="HTML" auto_esc=true>
+
 <#-- @ftlvariable name="projects" type="java.util.List<com.helltar.homepage.updaters.GitHubRepository>" -->
 
 <#assign githubBaseUrl="https://github.com/Helltar">
@@ -8,40 +10,50 @@
 <#assign avatarUrl="https://avatars.githubusercontent.com/u/6628997?v=4">
 
 <#import "layout.ftl" as layout />
-<@layout.header>
+<@layout.page
+    title="Helltar - Home"
+    description="Helltar homepage with links, projects, and contacts."
+    canonicalUrl="/"
+>
 
 <div class="avatar-container">
     <img class="avatar" src="${avatarUrl}" alt="avatar" height="96" width="96">
-    <div class="flag">🇺🇦</div>
 </div>
 
 <div class="section-title">🔗</div>
 
-<a href="${githubBaseUrl}">github</a><br>
-<a href="${youtubeUrl}">youtube</a><br>
-<a href="${googlePlayUrl}">googleplay</a><br>
-<a href="/wallpapers">wallpapers</a><br>
+<p><a href="${githubBaseUrl}">github</a></p>
+<p><a href="${youtubeUrl}">youtube</a></p>
+<p><a href="${googlePlayUrl}">googleplay</a></p>
 
-<div class="section-title">🎯 projects</div>
+<div class="section-title">projects</div>
 
-<#list projects as project>
-    <#if project??>
-        <div class="project">
-            <a href="${project.url}">${project.name}</a>
-            <span class="project-description">${project.description}</span>
-            <span class="language-indicator"></span>
-            <span class="programming-language">${project.primaryLanguage.name}</span>
-        </div>
-    </#if>
-</#list>
+<#if projects?has_content>
+    <#list projects as project>
+        <#if project??>
+            <div class="project">
+                <a href="${project.url!"#"}">${project.name!"untitled project"}</a>
+                <span class="project-description">${project.description!"No description provided."}</span>
+                <span class="language-indicator"></span>
+                <span class="programming-language">${(project.primaryLanguage.name)!"Unknown"}</span>
+            </div>
+        </#if>
+    </#list>
+<#else>
+    <p class="empty-state">Projects are temporarily unavailable.</p>
+</#if>
 
-<a href="${githubBaseUrl}?tab=repositories" style="font-size: medium">see all →</a>
+<a class="see-all-link" href="${githubBaseUrl}?tab=repositories">see all →</a>
 
-<div class="section-title">💬 contacts</div>
+<div class="section-title">misc</div>
+
+<p><a href="/wallpapers">wallpapers</a></p>
+
+<div class="section-title">contacts</div>
 
 <p><a href="${signalLink}">signal.me</a></p>
 <p><a href="mailto:${email}">${email}</a></p>
 
 <!-- sho tut? -->
 
-</@layout.header>
+</@layout.page>
