@@ -20,7 +20,7 @@
     <img class="avatar" src="${avatarUrl}" alt="avatar" height="96" width="96">
 </div>
 
-<div class="section-title">🔗</div>
+<div class="section-title">links</div>
 
 <p><a href="${githubBaseUrl}">github</a></p>
 <p><a href="${youtubeUrl}">youtube</a></p>
